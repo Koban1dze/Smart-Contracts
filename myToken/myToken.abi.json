@@ -1,0 +1,57 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "createToken",
+			"inputs": [
+				{"name":"valueName","type":"string"},
+				{"name":"valueColor","type":"string"},
+				{"name":"valueSpeed","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getTokenInfo",
+			"inputs": [
+				{"name":"valueIndex","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"carName","type":"string"},
+				{"name":"carColor","type":"string"},
+				{"name":"speed","type":"uint256"},
+				{"name":"price","type":"optional(uint256)"}
+			]
+		},
+		{
+			"name": "sell",
+			"inputs": [
+				{"name":"valueIndex","type":"uint256"},
+				{"name":"valuePrice","type":"uint256"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"components":[{"name":"carName","type":"string"},{"name":"carColor","type":"string"},{"name":"speed","type":"uint256"}],"name":"tokenArray","type":"tuple[]"},
+		{"name":"TokenID","type":"map(uint256,uint256)"},
+		{"name":"Price","type":"map(uint256,uint256)"}
+	]
+}
